@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import TextForm from './components/TextForm'
 import About from './components/About'
 import Alert from './components/Alert'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not.....going for interview do learn why exact is used in path below in router dom
@@ -35,18 +35,13 @@ const showAlert = (message, type)=>{
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar title="Textutils" aboutText="About Textutils" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="Textutils"  mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          <Routes>
-            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
-            <Route exact path="/about" element={<About />} /> 
-          </Routes>
+            <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
         </div> 
-      </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App
