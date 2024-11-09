@@ -34,6 +34,3 @@ Navbar.propTypes = {title: PropTypes.string.isRequired, // ab title me in app.js
                     aboutText: PropTypes.string // isrequired mtlb undefined nahi hona chahiye..... abhi defaultProps lga to error dega
 }
 
-Navbar.defaultProps = {
-  title: 'Set title here'
-}
